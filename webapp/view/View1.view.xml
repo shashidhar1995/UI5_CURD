@@ -1,0 +1,48 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    controllerName="app.curdoperations.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"    
+    xmlns="sap.m"  
+>
+    <Page
+        id="page"
+        titleAlignment="Center"
+        title="{i18n>title}"
+    >   
+        <Table id="idProducts" items="{/Products}">
+            <columns>
+                <Column>
+                <Text text="ID" />                
+                </Column> 
+                <Column>
+                <Text text="Name" />                
+                </Column> 
+                <Column>
+                <Text text="Price" />                
+                </Column> 
+                <Column>
+                <Text text="Rating" />                
+                </Column> 
+                <Column>
+                <Text text="" />                
+                </Column>     
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{ID}"/>
+                        <Text text="{Name}"/>
+                        <Text text="{Price}"/>
+                        <Input value="{Rating}" editable="false"/> 
+                        <HBox>     
+                        <Button icon="sap-icon://edit" text="Edit" press="onEdit"/>   
+                        <Button class="sapUiSmallMarginBeginEnd" type="Negative" icon="sap-icon://delete" text="Delete" press="onDelete"/>
+                        <Button icon="sap-icon://copy" text="Duplicate" press="onDuplicate"/>
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
